@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>OTPOEMS</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icons8-oak-tree-96.png')}}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href= "{{ url_for('static', filename='styles.css')}}" rel="stylesheet" />
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display|Merriweather" />
+        <style>
+              h1 {
+                      font-family: 'Playfair+Display';
+                      font-size: 64px;
+
+              }
+              h3 {
+                      font-family: 'Montserrat', serif;
+                      font-size: 24px;
+              }
+              p {
+                      font-family: 'Playfair+Display', serif;
+                      font-size: 16px;
+              }
+        </style>
+
+    </head>
+<body>
+<div class="container pt-3">
+        <h1>
+                <span style="color:green">OTP</span>OEMS
+
+        </h1>
+
+
+</div>
+<div class="container py-5 ps-5">
+        {% for line in poem_lines %}
+        <h3>{{line}}</h3>
+        {% endfor%}
+
+</div>
+<div class="container py-5">
+        <p>Written by ChatGPT in the style of {{ poet }} on {{ date.strftime("%B %d, %Y") }}.</p>
+</div>
+</body>
+</html>

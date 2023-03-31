@@ -1,3 +1,6 @@
+*.pyc
 .idea*
 test_json.json
 .DS*
+__pycache__*
+otpoems/__pycache__/

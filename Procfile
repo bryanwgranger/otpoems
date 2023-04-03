@@ -1,1 +1,1 @@
-web: gunicorn app:otpoems
+web: flask db upgrade; gunicorn otpoems:otpoems

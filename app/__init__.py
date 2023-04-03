@@ -13,9 +13,9 @@ def create_app(config_class=Config):
     db.init_app(app)
     migrate.init_app(app, db)
 
-    from otpoems.main import bp as routes_bp
+    from app.main import bp as routes_bp
     app.register_blueprint(routes_bp)
 
     return app
 
-from otpoems import models
+from app import models

@@ -3,4 +3,5 @@
 test_json.json
 .DS*
 __pycache__*
-otpoems/__pycache__/
+app/__pycache__/
+tests.py

@@ -1,5 +1,5 @@
 from flask import current_app
-from otpoems import db
+from app import db
 
 class Poem(db.Model):
     id = db.Column(db.Integer, primary_key=True)

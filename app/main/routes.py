@@ -3,9 +3,9 @@ import json
 import datetime
 import random
 import os
-from otpoems import db
-from otpoems.main import bp
-from otpoems.models import Poem
+from app import db
+from app.main import bp
+from app.models import Poem
 
 from flask import render_template
 

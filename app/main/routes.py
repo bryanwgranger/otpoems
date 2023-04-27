@@ -50,8 +50,9 @@ def write_poem(poet):
     r = requests.post(url=url,
                       data=json.dumps(data),
                       headers=headers)
-    with open('test_json.json', 'w') as j:
-        json.dump(r.json(), j)
+    # with open('test_json.json', 'w') as j:
+    #     json.dump(r.json(), j)
+    print(r.json())
     return r.json()
 
 

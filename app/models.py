@@ -7,3 +7,8 @@ class Poem(db.Model):
     poet = db.Column(db.String(120))
     poem = db.Column(db.String(255))
     total_tokens = db.Column(db.Integer)
+
+class Poet(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    poet = db.Column(db.String(120))
+

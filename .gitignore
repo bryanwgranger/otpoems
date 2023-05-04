@@ -5,3 +5,5 @@ test_json.json
 __pycache__*
 app/__pycache__/
 tests.py
+
+app/main/upload_poets.py

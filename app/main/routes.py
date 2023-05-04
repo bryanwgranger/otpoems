@@ -5,12 +5,11 @@ import random
 import os
 from app import db
 from app.main import bp
-from app.models import Poem
+from app.models import Poem, Poet
 
 from flask import render_template
 
 OPEN_AI_TOKEN = os.getenv("OPEN_AI_TOKEN")
-
 
 @bp.route("/")
 def get_poem():
@@ -53,49 +52,7 @@ def write_poem(poet):
 
     return r.json()
 
-
 def get_random_poet():
-    poets = ['William Shakespeare',
-             'Langston Hughes',
-             'Emily Dickinson',
-             'Shel Silverstein',
-             'Zora Neale Hurston',
-             'Rumi',
-             'Lord Byron',
-             'Sylvia Plath',
-             'Federico García Lorca',
-             'Rainer Maria Rilke',
-             'Johann Wolfgang von Goethe',
-             'Pablo Neruda',
-             'Tristan Tzara',
-             'Bob Dylan',
-             'Maya Angelou',
-             'Sappho',
-             'JRR Tolkien',
-             'Dr. Seuss',
-             # music
-             'Snoop Dogg',
-             # fictional characters
-             'Elmer Fudd',
-             'Bugs Bunny',
-             'Elmo',
-             'Batman',
-             'Yoda',
-             'an alien',
-             'the Wizard of Oz',
-             'an outdoor cat',
-             'someone in an airplane flying high above',
-             'a Salvador Dali painting',
-             'Dwight Schrute',
-             'Winnie the Pooh',
-             'Frodo Baggins',
-             'Bilbo Baggins',
-             'Spider-Man',
-             'Monica from Friends',
-             'a door to door salesperson',
-             'a cowboy in a John Wayne movie',
-             'Tow Mater from the Cars franchise',
-             'one of the Teenage Mutant Ninja Turtles',
-
-             ]
+    poet_entries = db.session.execute(db.select(Poet.poet)).scalars()
+    poets = [p for p in poet_entries]
     return random.choice(poets)
